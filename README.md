@@ -1,4 +1,4 @@
-# FancyAnkiCards
+# [FancyAnkiCards](https://ypetremann.github.io/FancyAnkiCards/)
 Fancy Anki Cards
 
 [Javascript](src/FancyAnkiCards.js)
