@@ -1,0 +1,2 @@
+# FancyAnkiCards
+Fancy Anki Cards
