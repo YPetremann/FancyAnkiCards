@@ -11,15 +11,15 @@ Fancy Anki Cards
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 <script src="https://ypetremann.github.io/FancyAnkiCards/src/FancyAnkiCards.js"></script>
 
-<nav class="breadcrumb">&#123;&#123;Deck}}</nav>
-<nav class="tags">&#123;&#123;Tags}}</nav>
+<nav class="breadcrumb">{{Deck}}</nav>
+<nav class="tags">{{Tags}}</nav>
 
 <!-- Start edit your template here -->
-<header>&#123;&#123;Recto}}</header>
+<header>{{Recto}}</header>
 
 <!-- Optionnaly add footer for Recto -->
 <!--
-<footer>&#123;&#123;type:Verso}}</footer>
+<footer>{{type:Verso}}</footer>
 -->
 ```
 
@@ -30,7 +30,7 @@ Fancy Anki Cards
 
 **Verso:**
 ```html
-&#123;&#123;FrontSide}}
-<footer>&#123;&#123;Verso}}</footer>
+{{FrontSide}}
+<footer>{{Verso}}</footer>
 ```
 {% endraw %}
