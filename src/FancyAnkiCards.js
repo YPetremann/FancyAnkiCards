@@ -6,6 +6,11 @@ function hashCode(s){
 function hashColor(text){
 	return "#"+Math.abs(hashCode(text)).toString(16).slice(0,6)
 }
+function pastel(text){return text
+	.replace(/0/g,"C").replace(/1/g,"D").replace(/2/g,"E").replace(/3/g,"F")
+	.replace(/4/g,"C").replace(/5/g,"D").replace(/6/g,"E").replace(/7/g,"F")
+	.replace(/8/g,"C").replace(/9/g,"D").replace(/A/g,"E").replace(/B/g,"F")
+}
 function light(text){return text
 	.replace(/0/g,"8").replace(/1/g,"9").replace(/2/g,"A").replace(/3/g,"B")
 	.replace(/4/g,"C").replace(/5/g,"D").replace(/6/g,"E").replace(/7/g,"F")
@@ -24,7 +29,7 @@ function breadcrumb(){
 	breadcrumb.innerHTML = breadcrumb.innerHTML
 		.split("::")
 		.join(" :: ")
-	card.style=`--deckcolor:${dark(hashColor(breadcrumb.innerHTML))};`
+	card.style=`--deckcolor:${pastel(hashColor(breadcrumb.innerHTML))};`
 	background()
 }
 function background(){
