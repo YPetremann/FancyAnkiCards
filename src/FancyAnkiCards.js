@@ -52,5 +52,22 @@ function tags(){
 		.join("")
 	tags.classList.add("tagged")
 }
+
+let md;
+function markdownizenode(node) {
+	if(!md) md = window.markdownit()
+	let content = node.innerHTML
+		.replace(/<[\/]?div\s*>/gi, "\n")
+		.replace(/<br\s*[\/]?>/gi, "\n")
+		.replace(/</gi,"&lt;")
+	node.innerHTML = md.render(content);
+}
+
+function markdownize(){
+	markdownizenode(document.querySelector("header"));
+	markdownizenode(document.querySelector("footer"));
+}
+
+window.requestAnimationFrame(markdownize);
 window.requestAnimationFrame(breadcrumb);
 window.requestAnimationFrame(tags);
