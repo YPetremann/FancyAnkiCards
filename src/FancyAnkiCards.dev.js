@@ -13,7 +13,7 @@ function loadStyle(url, id) {
   if (id && document.getElementById(id + "_CSS")) return;
   return new Promise((resolve, reject) => {
     let link = document.createElement('link');
-    if (id) { script.id = id + "_CSS"; }
+    if (id) { link.id = id + "_CSS"; }
     link.rel = 'stylesheet';
     link.type = "text/css";
     link.href = url;
