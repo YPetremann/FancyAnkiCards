@@ -53,16 +53,14 @@ function tags(){
 	tags.classList.add("tagged")
 }
 
-let md;
 function markdownizenode(node) {
-	if(!md) md = window.markdownit()
+	let md = window.markdownit()
 	let content = node.innerHTML
 		.replace(/<[\/]?div\s*>/gi, "\n")
 		.replace(/<br\s*[\/]?>/gi, "\n")
 		.replace(/</gi,"&lt;")
 	node.innerHTML = md.render(content);
 }
-
 function markdownize(){
 	markdownizenode(document.querySelector("header"));
 	markdownizenode(document.querySelector("footer"));
@@ -84,4 +82,5 @@ async function main(){
 	breadcrumb();
 	tags();
 }
+
 window.requestAnimationFrame(main)
