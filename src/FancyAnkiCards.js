@@ -58,7 +58,7 @@ function markdownize(node) {
 		.replace(/<[\/]?div\s*>/gi, "\n")
 		.replace(/<br\s*[\/]?>/gi, "\n")
 		.replace(/</gi,"&lt;")
-	node.innerHTML = md.render(content);
+	node.innerHTML = window.FAC.md.render(content);
 }
 function loadscript(url){
 	let script = document.createElement('script');
