@@ -23,7 +23,7 @@ function loadStyle(url) {
   });
 }
 
-function main() {
+async function main() {
   try {
     await loadScript("http://127.0.0.1:5500/src/FancyAnkiCards.js", "FAC");
     await loadStyle("https://ypetremann.github.io/FancyAnkiCards/src/FancyAnkiCards.css", "FAC");
