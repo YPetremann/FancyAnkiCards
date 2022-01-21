@@ -67,7 +67,21 @@ function markdownize(){
 	markdownizenode(document.querySelector("header"));
 	markdownizenode(document.querySelector("footer"));
 }
-
-window.requestAnimationFrame(markdownize);
-window.requestAnimationFrame(breadcrumb);
-window.requestAnimationFrame(tags);
+function loadscript(url){
+	let script = document.createElement('script');
+	script.src = url;
+	let pr = new Promise((resolve)=>{script.onload=resolve})
+	document.head.appendChild(script);
+	return pr
+}
+async function main(){
+	await Promise.all([
+		loadscript("https://cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js")
+		loadscript("https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js")
+		loadscript("https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.3.2/markdown-it.min.js")
+	])
+	markdownize();
+	breadcrumb();
+	tags();
+}
+window.requestAnimationFrame(main)
