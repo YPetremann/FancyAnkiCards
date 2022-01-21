@@ -9,7 +9,7 @@ function loadScript(url, id) {
     document.head.appendChild(script);
   });
 }
-function loadStyle(url) {
+function loadStyle(url, id) {
   if (id && document.getElementById(id + "_CSS")) return;
   return new Promise((resolve, reject) => {
     let link = document.createElement('link');
@@ -26,7 +26,7 @@ function loadStyle(url) {
 async function main() {
   try {
     await loadScript("http://127.0.0.1:5500/src/FancyAnkiCards.js", "FAC");
-    await loadStyle("https://ypetremann.github.io/FancyAnkiCards/src/FancyAnkiCards.css", "FAC");
+    await loadStyle("http://127.0.0.1:5500/src/FancyAnkiCards.css", "FAC");
   } catch {
     await loadScript("https://ypetremann.github.io/FancyAnkiCards/src/FancyAnkiCards.js", "FAC");
     await loadStyle("https://ypetremann.github.io/FancyAnkiCards/src/FancyAnkiCards.css", "FAC");
