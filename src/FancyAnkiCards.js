@@ -53,17 +53,13 @@ function tags(){
 	tags.classList.add("tagged")
 }
 
-function markdownizenode(node) {
+function markdownize(node) {
 	let md = window.markdownit()
 	let content = node.innerHTML
 		.replace(/<[\/]?div\s*>/gi, "\n")
 		.replace(/<br\s*[\/]?>/gi, "\n")
 		.replace(/</gi,"&lt;")
 	node.innerHTML = md.render(content);
-}
-function markdownize(){
-	markdownizenode(document.querySelector("header"));
-	markdownizenode(document.querySelector("footer"));
 }
 function loadscript(url){
 	let script = document.createElement('script');
@@ -72,15 +68,24 @@ function loadscript(url){
 	document.head.appendChild(script);
 	return pr
 }
-async function main(){
+async function load(){
 	await Promise.all([
 		loadscript("https://cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"),
 		loadscript("https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"),
 		loadscript("https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.3.2/markdown-it.min.js")
 	])
-	markdownize();
+}
+function redraw(){
+	markdownize(document.querySelector("header"));
+	markdownize(document.querySelector("footer"));
 	breadcrumb();
 	tags();
 }
-
-window.requestAnimationFrame(main)
+async function main(){
+	if(!window.fancyAnkiCard) {
+		window.fancyAnkiCard = true
+		await load()
+	}
+	window.requestAnimationFrame(redraw)
+}
+main()
