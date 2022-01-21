@@ -54,7 +54,6 @@ function tags(){
 }
 
 function markdownize(node) {
-	let md = window.markdownit()
 	let content = node.innerHTML
 		.replace(/<[\/]?div\s*>/gi, "\n")
 		.replace(/<br\s*[\/]?>/gi, "\n")
@@ -74,6 +73,15 @@ async function load(){
 		loadscript("https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"),
 		loadscript("https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.3.2/markdown-it.min.js")
 	])
+	
+	window.FAC.md = window.markdownit({
+		html: true,
+		xhtmlOut: true,
+		breaks: false,
+		langPrefix: 'lang-',
+		linkify: true,
+		highlight: (str, lang) => `<pre class="prettyprint lang-${lang}">${str}</pre>`,
+	})
 }
 function redraw(){
 	markdownize(document.querySelector("header"));
@@ -82,8 +90,8 @@ function redraw(){
 	tags();
 }
 async function main(){
-	if(!window.fancyAnkiCard) {
-		window.fancyAnkiCard = true
+	if(!window.FAC) {
+		window.FAC = {}
 		await load()
 	}
 	window.requestAnimationFrame(redraw)
