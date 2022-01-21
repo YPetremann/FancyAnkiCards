@@ -66,9 +66,9 @@ function markdownize(node) {
 }
 async function load() {
 	await Promise.all([
-		loadscript("https://cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"),
-		loadscript("https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"),
-		loadscript("https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.3.2/markdown-it.min.js")
+		loadScript("https://cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"),
+		loadScript("https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"),
+		loadScript("https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.3.2/markdown-it.min.js")
 	]);
 
 	window.FAC.md = window.markdownit({
