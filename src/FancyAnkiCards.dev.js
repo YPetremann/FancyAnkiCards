@@ -5,7 +5,10 @@ function loadScript(url, id) {
     if (id) { script.id = id + "_JS"; }
     script.src = url;
     script.onload = resolve;
-    script.onerror = reject;
+    script.onerror = (e) => {
+      script.remove();
+      reject(e);
+    };
     document.head.appendChild(script);
   });
 }
@@ -19,6 +22,10 @@ function loadStyle(url, id) {
     link.href = url;
     link.onload = resolve;
     link.onerror = reject;
+    link.onerror = (e) => {
+      link.remove();
+      reject(e);
+    };
     document.head.appendChild(link);
   });
 }
