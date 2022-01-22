@@ -22,8 +22,9 @@ function loadStyle(url, id) {
     document.head.appendChild(link);
   });
 }
-if (!main) {
-  async function main() {
+
+(async () => {
+  if (!window.FAC) {
     try {
       console.log("Start loading in dev");
       await loadScript("http://127.0.0.1:5500/src/FancyAnkiCards.js", "FAC");
@@ -36,6 +37,4 @@ if (!main) {
       console.log("End loading in prod");
     }
   }
-}
-
-main();
+})();
