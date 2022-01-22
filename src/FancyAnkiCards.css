@@ -6,6 +6,7 @@
 *:after {
   box-sizing: inherit;
 }
+/* general style */
 body {
   display: flex;
   flex-direction: column;
@@ -21,6 +22,14 @@ body > .container {
   margin: 0;
   display: flex;
   flex-direction: column;
+}
+/* fix ankyweb */
+#ansbut,
+#easebuts {
+  height: 77px;
+  align-items: end;
+  margin-left: 0;
+  margin-right: 0;
 }
 .pt-1,
 #ansarea-pad {
