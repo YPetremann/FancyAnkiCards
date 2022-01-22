@@ -22,14 +22,19 @@ function loadStyle(url, id) {
     document.head.appendChild(link);
   });
 }
-
-async function main() {
-  try {
-    await loadScript("http://127.0.0.1:5500/src/FancyAnkiCards.js", "FAC");
-    await loadStyle("http://127.0.0.1:5500/src/FancyAnkiCards.css", "FAC");
-  } catch {
-    await loadScript("https://ypetremann.github.io/FancyAnkiCards/src/FancyAnkiCards.js", "FAC");
-    await loadStyle("https://ypetremann.github.io/FancyAnkiCards/src/FancyAnkiCards.css", "FAC");
+if (!main) {
+  async function main() {
+    try {
+      console.log("Start loading in dev");
+      await loadScript("http://127.0.0.1:5500/src/FancyAnkiCards.js", "FAC");
+      await loadStyle("http://127.0.0.1:5500/src/FancyAnkiCards.css", "FAC");
+      console.log("End loading in dev");
+    } catch {
+      console.log("Start loading in prod");
+      await loadScript("https://ypetremann.github.io/FancyAnkiCards/src/FancyAnkiCards.js", "FAC");
+      await loadStyle("https://ypetremann.github.io/FancyAnkiCards/src/FancyAnkiCards.css", "FAC");
+      console.log("End loading in prod");
+    }
   }
 }
 
