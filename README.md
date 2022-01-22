@@ -1,34 +1,32 @@
 # [FancyAnkiCards](https://ypetremann.github.io/FancyAnkiCards/)
+
 Fancy Anki Cards
 
 [Javascript](src/FancyAnkiCards.js) | [Styles](src/FancyAnkiCards.css)
 
-{% raw %}
+**Front:**
 
-**Recto:**
 ```html
+<!-- Every cards needs this -->
 <script src="https://ypetremann.github.io/FancyAnkiCards/src/FancyAnkiCards.js"></script>
 
+<!-- You can add this to add breadcrumb and tags -->
 <nav class="breadcrumb">{{Deck}}</nav>
 <nav class="tags">{{Tags}}</nav>
 
-<!-- Start edit your template here -->
-<header>{{Recto}}</header>
+<!-- Question need to be in header -->
+<header>{{Front}}</header>
 
-<!-- Optionnaly add footer for Recto -->
-<!--
-<footer>{{type:Verso}}</footer>
+<!-- You can add something here -->
+<footer>{{type:Back}}</footer>
 -->
 ```
 
-**Style:**
-```css
-@import url("https://ypetremann.github.io/FancyAnkiCards/src/FancyAnkiCards.css");
-```
+**Back:**
 
-**Verso:**
 ```html
+<!-- Load rest of the card -->
 {{FrontSide}}
-<footer>{{Verso}}</footer>
+<!-- Answer need to be in footer -->
+<footer>{{Back}}</footer>
 ```
-{% endraw %}
