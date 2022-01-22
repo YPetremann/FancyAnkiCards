@@ -57,6 +57,7 @@ function tags() {
 	tags.classList.add("tagged");
 }
 function markdownize(node) {
+	if (!node) return;
 	const content = node.innerHTML
 		.replace(/<[\/]?div\s*>/gi, "\n")
 		.replace(/<br\s*[\/]?>/gi, "\n");
