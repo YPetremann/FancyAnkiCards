@@ -4,8 +4,12 @@ function loadScript(url, id) {
     let script = document.createElement('script');
     if (id) { script.id = id + "_JS"; }
     script.src = url;
-    script.onload = resolve;
+    script.onload = () => {
+      console.info(`Succesfully loaded : ${url}}`);
+      resolve();
+    };
     script.onerror = (e) => {
+      console.error(`Error while loading : ${url}}`);
       script.remove();
       reject(e);
     };
@@ -20,9 +24,12 @@ function loadStyle(url, id) {
     link.rel = 'stylesheet';
     link.type = "text/css";
     link.href = url;
-    link.onload = resolve;
-    link.onerror = reject;
+    link.onload = () => {
+      console.info(`Succesfully loaded : ${url}}`);
+      resolve();
+    };
     link.onerror = (e) => {
+      console.error(`Error while loading : ${url}}`);
       link.remove();
       reject(e);
     };
