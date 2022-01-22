@@ -59,6 +59,7 @@ function tags() {
 function markdownize(node) {
 	if (!node) return;
 	const content = node.innerHTML
+		.replace(/style="zoom: 1;"/gi, "")
 		.replace(/<[\/]?div\s*>/gi, "\n")
 		.replace(/<br\s*[\/]?>/gi, "\n");
 
@@ -120,8 +121,6 @@ module.exports.tokenize = function emphasis(state, silent) {
 
 	return true;
 };
-
-
 function postProcess(state, delimiters) {
 	var i,
 		startDelim,
@@ -182,9 +181,6 @@ function postProcess(state, delimiters) {
 		}
 	}
 }
-
-// Walk through delimiter list and replace text tokens with tags
-//
 module.exports.postProcess = function emphasis(state) {
 	var curr;
 	var tokens_meta = state.tokens_meta;
@@ -198,7 +194,6 @@ module.exports.postProcess = function emphasis(state) {
 		}
 	}
 };
-
 function discordEmphasis(md) {
 	md.inline.ruler2.at('emphasis', module.exports.postProcess);
 }
@@ -209,17 +204,23 @@ function discordEmphasis(md) {
 async function load() {
 	await Promise.all([
 		loadScript("https://cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"),
-		loadScript("https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"),
-		loadScript("https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.3.2/markdown-it.min.js")
+		loadScript("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"),
+		loadStyle("https://cdn.jsdelivr.net/npm/highlight.js@11.4.0/styles/default.css"),
+		loadStyle("https://cdn.jsdelivr.net/npm/highlight.js@11.4.0/styles/a11y-dark.css"),
+		loadScript("https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.3.2/markdown-it.min.js"),
 	]);
 
 	window.FAC.md = window.markdownit({
 		html: true,
 		xhtmlOut: true,
 		breaks: false,
-		langPrefix: 'lang-',
 		linkify: true,
-		highlight: (str, lang) => `<pre class="prettyprint lang-${lang}">${str}</pre>`,
+		highlight: function (str, lang) {
+			if (lang && hljs.getLanguage(lang)) try {
+				return hljs.highlight(str, { language: lang }).value;
+			} catch (__) { }
+			return ''; // use external default escaping
+		}
 	}).use(discordEmphasis);
 }
 
@@ -233,7 +234,6 @@ function redraw() {
 	markdownize(document.querySelector("footer"));
 	breadcrumb();
 	tags();
-	PR.prettyPrint();
 	observer.observe(qa, config);
 }
 

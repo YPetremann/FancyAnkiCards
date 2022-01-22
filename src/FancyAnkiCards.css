@@ -184,9 +184,11 @@ pre,
 code,
 kbd {
   text-align: left;
-  background-color: #7777;
-  border: 1px solid #777;
-  padding: 0px 5px;
+  background-color: #333;
+  color: white;
+  border: 1px solid #333;
+  padding: 2px 5px;
+  border-radius: 3px;
 }
 kbd {
   border-radius: 2px;
@@ -196,11 +198,6 @@ pre {
   margin: 1px;
 }
 
-pre.prettyprint,
-code.prettyprint {
-  background-color: #333;
-  color: white;
-}
 pre .nocode,
 code .nocode {
   background-color: none;
