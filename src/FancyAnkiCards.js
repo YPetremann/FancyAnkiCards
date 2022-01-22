@@ -4,7 +4,7 @@ function hashCode(s) {
 		.reduce((a, b) => { a = ((a << 5) - a) + b.charCodeAt(0); return a & a; }, 0);
 }
 function hashColor(text) {
-	return "#" + Math.abs(hashCode(text)).toString(16).slice(0, 6);
+	return "#" + Math.abs(hashCode(text)).toString(16).slice(0, 6).padEnd(6, '0');
 }
 function pastel(text) {
 	return text
@@ -30,6 +30,7 @@ function dark(text) {
 function breadcrumb() {
 	let card = document.querySelector("#qa");
 	let breadcrumb = document.querySelector(".breadcrumb");
+	if (!breadcrumb) return;
 	breadcrumb.innerHTML = breadcrumb.innerHTML
 		.split("::")
 		.join(" :: ");
@@ -49,6 +50,7 @@ function background() {
 function tags() {
 	let tags = document.querySelector(".tags");
 	if (tags.classList.contains("tagged")) return;
+	if (!tags) return;
 	tags.innerHTML = tags.innerHTML
 		.split(" ")
 		.filter(e => e !== "")
