@@ -5,11 +5,11 @@ function loadScript(url, id) {
     if (id) { script.id = id + "_JS"; }
     script.src = url;
     script.onload = () => {
-      console.info(`Succesfully loaded : ${url}}`);
+      console.info(`Succesfully loaded : ${url}`);
       resolve();
     };
     script.onerror = (e) => {
-      console.error(`Error while loading : ${url}}`);
+      console.error(`Error while loading : ${url}`);
       script.remove();
       reject(e);
     };
