@@ -175,11 +175,12 @@ kbd {
   text-align: left;
   background-color: #333;
   color: white;
-  border: 1px solid #333;
+  border: 1px solid #eee;
   padding: 2px 5px;
   border-radius: 3px;
 }
 pre > code {
+  border: 0;
   padding: 0;
 }
 kbd {
