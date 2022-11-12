@@ -132,32 +132,13 @@ body > .container {
 #qa > .tags li {
   --tagcolor: red;
   display: inline-block;
-  padding: 0 5px;
+  padding: 2px 8px;
   margin: 0 5px;
-  margin-left: 10px;
-  position: relative;
+  border-radius:5px;
   background: var(--tagcolor);
   font-weight: 900;
 }
-#qa > .tags li:before {
-  position: absolute;
-  right: 100%;
-  top: 0;
-  bottom: 0;
-  content: "";
-  border: 7px transparent solid;
-  border-right-color: var(--tagcolor);
-}
-#qa > .tags li:after {
-  position: absolute;
-  left: -4px;
-  top: 50%;
-  margin-top: -2px;
-  height: 4px;
-  width: 4px;
-  content: "";
-  background: var(--deckcolor);
-}
+
 
 hr {
   border: none;

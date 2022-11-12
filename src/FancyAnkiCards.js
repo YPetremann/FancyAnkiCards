@@ -61,7 +61,7 @@ function breadcrumb() {
   if (!breadcrumb) return
   breadcrumb.innerHTML = breadcrumb.innerHTML.split("::").join(" :: ")
   card.style = `
-    --deck-medium:${medium(hashColor(breadcrumb.innerHTML))};
+    --deckcolor:${medium(hashColor(breadcrumb.innerHTML))};
   `
   background()
 }
