@@ -119,7 +119,6 @@ body > .container {
   background-opacity:40%;
 }
 #qa > footer {
-  color: black;
   flex-grow: 100;
 }
 #qa > .tags {
