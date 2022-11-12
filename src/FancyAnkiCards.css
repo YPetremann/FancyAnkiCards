@@ -79,11 +79,13 @@ body > .container {
   /* min-height:100vh; */
   margin: 0;
   padding: 20px;
-  color:black;
   text-align: center;
   font-family: sans-serif;
   font-size: 16px;
   box-sizing: border-box;
+}
+.nightMode .card{
+  color:black;
 }
 #qa {
   --deckcolor: #09c;
