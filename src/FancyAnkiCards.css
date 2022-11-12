@@ -125,7 +125,7 @@ body > .container {
 #qa > .tags {
   order: 2;
   border-radius: 0 0 7px 7px;
-  background: var(--deckcolor);
+  //background: var(--deckcolor);
   background-opacity:40%;
   margin: 0;
 }
