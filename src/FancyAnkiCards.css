@@ -35,9 +35,6 @@ body > .container {
 #ansarea-pad {
   display: none;
 }
-.card {
-  min-height: 100vh;
-}
 #quiz {
   flex-grow: 1;
   display: grid !important;
@@ -79,6 +76,7 @@ body > .container {
   /* min-height:100vh; */
   margin: 0;
   padding: 20px;
+  min-height: 100vh;
   text-align: center;
   font-family: sans-serif;
   font-size: 16px;
