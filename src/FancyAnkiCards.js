@@ -60,7 +60,9 @@ function breadcrumb() {
   let breadcrumb = document.querySelector(".breadcrumb")
   if (!breadcrumb) return
   breadcrumb.innerHTML = breadcrumb.innerHTML.split("::").join(" :: ")
-  card.style = `--deckcolor:${pastel(hashColor(breadcrumb.innerHTML))};`
+  card.style = `
+    --deck-medium:${medium(hashColor(breadcrumb.innerHTML))};
+  `
   background()
 }
 function background() {

@@ -84,16 +84,14 @@ body > .container {
   font-size: 16px;
   box-sizing: border-box;
 }
-.nightMode .card{
-  color:black;
-}
 #qa {
   --deckcolor: #09c;
   --backcolor: #fffaf0;
   display: flex;
   flex-direction: column;
   margin: 0;
-  background: var(--deckcolor);
+  color: var(--text-fg);
+  background: var(--window-bg);
   min-height: 380px;
   width: 100%;
   max-width: 640px;
@@ -103,7 +101,7 @@ body > .container {
 #qa:before,
 #qa:after {
   content: "";
-  flex-grow: 1;
+  flex-grow: 0;
   background-color: var(--backcolor);
 }
 #qa > * {
@@ -113,23 +111,24 @@ body > .container {
   font-weight: 900;
   order: -1;
   border-radius: 7px 7px 0 0;
-  background: #0001;
   margin: 0;
+  background: var(--deckcolor);
+  background-opacity:50%;
 }
 #qa > header {
   order: -1;
-  border-radius: 7px;
-  background: #fff1;
+  background: var(--deckcolor);
+  background-opacity:40%;
 }
 #qa > footer {
   color: black;
-  background-color: var(--backcolor);
   flex-grow: 100;
 }
 #qa > .tags {
   order: 2;
   border-radius: 0 0 7px 7px;
-  background: #0001;
+  background: var(--deckcolor);
+  background-opacity:40%;
   margin: 0;
 }
 #qa > .tags li {
