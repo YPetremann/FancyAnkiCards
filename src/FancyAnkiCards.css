@@ -99,8 +99,7 @@ body > .container {
 #qa:before,
 #qa:after {
   content: "";
-  flex-grow: 0;
-  background-color: var(--backcolor);
+  flex-grow: 1;
 }
 #qa > * {
   padding: 10px;
