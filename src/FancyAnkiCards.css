@@ -88,8 +88,8 @@ body > .container {
   display: flex;
   flex-direction: column;
   margin: 0;
-  color: var(--text-fg);
-  background: var(--window-bg);
+  color: var(--text-fg, black);
+  background: var(--window-bg, white);
   min-height: 380px;
   width: 100%;
   max-width: 640px;
