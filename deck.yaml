@@ -1,0 +1,38 @@
+- Deck: Test::Deck
+  Recto: |-
+    Question Card  
+    plop
+  Verso: |-
+    Verso Card
+
+  Tags: Test Deck
+
+- Recto: >-
+    ```js
+    console.log('plop')
+    console.log('plop')
+    console.log('plop')
+    ```
+  Verso: >-
+    ```js
+    console.log('plop')
+    console.log('plop')
+    console.log('plop')
+    ```
+  Deck: Test::Deck
+  Tags: Test Deck
+
+- Recto: >-
+    *mark*
+    **bold**
+    _italic_
+    __underline__
+    ***___all___***
+  Verso: (Back 2)
+  Deck: Test::Deck
+  Tags: Test Deck
+
+- Recto: (Front 3)
+  Verso: (Back 3)
+  Deck: Test::Deck
+  Tags: Test Deck

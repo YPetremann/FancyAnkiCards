@@ -1,0 +1,62 @@
+nav {
+  margin-bottom: 1rem;
+}
+.nav-item a.nav-link {
+  color: rgba(0, 0, 0, 0.4666666667);
+}
+.nav-item a.nav-link:hover {
+  color: #000;
+}
+.bg-gray {
+  background-color: #eee;
+}
+main {
+  min-height: 75vh;
+  margin-bottom: 1rem;
+}
+html {
+  font-size: 12px;
+}
+@media (min-width: 576px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+.light-bottom-border {
+  border-bottom: 1px solid #f0f0f0;
+}
+@media (max-width: 576px) {
+  nav .container {
+    width: 100%;
+  }
+}
+[v-cloak] {
+  display: none;
+}
+.likebar {
+  height: 6px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 25px;
+}
+.like {
+  background: #1c93e3;
+}
+.dislike {
+  background: red;
+}
+.twox {
+  zoom: 50%;
+}
+.field:empty:after {
+  content: " ";
+}
+.alert ul {
+  margin-bottom: 0;
+}
