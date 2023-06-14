@@ -98,7 +98,7 @@ body > .container {
   margin-top: 0 !important;
   background: var(--deckcolor);
   min-height: 380px;
-  //width: 100%;
+  /*width: 100%;*/
   width: 640px;
   border-radius: 7px;
   box-shadow: 0 5px 10px #0007;
