@@ -1,0 +1,55 @@
+ins,
+.typeGood {
+  background: #0f07;
+}
+del,
+.typeBad {
+  background: #f007;
+}
+mark {
+  padding: 1px 3px;
+  background: #ffee00;
+  mix-blend-mode: multiply;
+}
+blockquote {
+  background: #7001;
+  border-left: 4px solid #7002;
+  padding-left: 4px;
+  text-align: left;
+}
+blockquote p {
+  margin: 0;
+}
+var {
+  font-family: monospace;
+  font-weight: 900;
+}
+#qa header:has(pre:only-child),
+#qa footer:has(pre:only-child) {
+  padding: 0;
+}
+
+pre,
+code,
+kbd {
+  text-align: left;
+  background-color: #333;
+  color: white;
+  border: 1px solid #333;
+  padding: 2px 5px;
+}
+kbd {
+  background: #777;
+  border: 1px solid #555;
+  border-radius: 2px;
+  border-bottom-width: 5px;
+}
+pre > code {
+  padding: 0;
+}
+pre {
+  margin: 0;
+}
+pre + pre {
+  margin-top: 2px;
+}

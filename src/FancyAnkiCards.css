@@ -1,0 +1,269 @@
+:root {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+/* general style */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body > nav {
+  margin: 0;
+}
+body > .container {
+  flex-grow: 1;
+  width: auto;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+/* fix ankyweb */
+#ansbut,
+#easebuts {
+  height: 77px;
+  align-items: end;
+  margin-left: 0;
+  margin-right: 0;
+}
+.pt-1,
+#ansarea-pad {
+  display: none;
+}
+#quiz {
+  flex-grow: 1;
+  display: grid !important;
+  grid-template:
+    "left right" auto
+    "qbox qbox" 1fr
+    "foot foot" auto / 1fr 1fr;
+}
+#leftStudyMenu {
+  grid-area: left;
+  padding: 10px;
+}
+#rightStudyMenu {
+  grid-area: right;
+  justify-self: end;
+  align-self: center;
+  overflow: hidden;
+  padding: 10px;
+}
+#qa_box.card {
+  min-height: auto;
+  grid-area: qbox;
+}
+#ansarea {
+  grid-area: foot;
+  position: static;
+  min-height: auto;
+}
+#ansbut {
+  margin: 0;
+}
+.card {
+  background: var(--image) calc(50%) calc(50%),
+    var(--image) calc(50% + 1px) calc(50% + 1px);
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  align-items: center;
+  /* min-height:100vh; */
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+#qa {
+  --deckcolor: #09c;
+  --backcolor: #fffaf0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  color: var(--text-fg, black);
+  background: var(--window-bg, white);
+  min-height: 380px;
+  width: 100%;
+  max-width: 640px;
+  border-radius: 7px;
+  box-shadow: 5px 5px 20px #0007;
+}
+#qa:before,
+#qa:after {
+  content: "";
+  flex-grow: 1;
+}
+#qa > * {
+  padding: 10px;
+}
+#qa > .breadcrumb {
+  font-weight: 900;
+  order: -1;
+  border-radius: 7px 7px 0 0;
+  margin: 0;
+  background: var(--deckcolor);
+  background-opacity: 50%;
+}
+#qa > header {
+  order: -1;
+  background: var(--deckcolor);
+  background-opacity: 40%;
+}
+#qa > footer {
+  flex-grow: 100;
+}
+#qa > .tags {
+  order: 2;
+  border-radius: 0 0 7px 7px;
+  //background: var(--deckcolor);
+  background-opacity: 40%;
+  margin: 0;
+}
+#qa > .tags li {
+  --tagcolor: red;
+  display: inline-block;
+  padding: 2px 8px;
+  margin: 0 5px;
+  border-radius: 5px;
+  background: var(--tagcolor);
+  font-weight: 900;
+}
+
+hr {
+  border: none;
+  border-bottom: 2px dotted #777;
+  margin: 5px;
+}
+input {
+  border: none;
+  border-bottom: #777 solid 2px;
+  background: #7777;
+  color: inherit;
+  padding: 5px;
+}
+.typeMissed {
+  background: #ccc7;
+}
+ins,
+.typeGood {
+  background: #0f07;
+}
+del,
+.typeBad {
+  background: #f007;
+}
+mark {
+  padding: 0px 5px;
+}
+var {
+  font-family: monospace;
+  font-weight: 900;
+}
+pre,
+code,
+kbd {
+  text-align: left;
+  background-color: #333;
+  color: white;
+  border: 1px solid #eee;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+pre > code {
+  border: 0;
+  padding: 0;
+}
+kbd {
+  background: #777;
+  border: 1px solid #555;
+  border-radius: 2px;
+  border-bottom-width: 5px;
+}
+pre {
+  margin: 1px;
+}
+
+pre .nocode,
+code .nocode {
+  background-color: none;
+  color: #000;
+}
+pre .str,
+code .str {
+  color: #ffa0a0;
+} /* string  - pink */
+pre .kwd,
+code .kwd {
+  color: #f0e68c;
+  font-weight: bold;
+}
+pre .com,
+code .com {
+  color: #87ceeb;
+} /* comment - skyblue */
+pre .typ,
+code .typ {
+  color: #98fb98;
+} /* type    - lightgreen */
+pre .lit,
+code .lit {
+  color: #cd5c5c;
+} /* literal - darkred */
+pre .pun,
+code .pun {
+  color: #fff;
+} /* punctuation */
+pre .pln,
+code .pln {
+  color: #fff;
+} /* plaintext */
+pre .tag,
+code .tag {
+  color: #f0e68c;
+  font-weight: bold;
+} /* html/xml tag    - lightyellow */
+pre .atn,
+code .atn {
+  color: #bdb76b;
+  font-weight: bold;
+} /* attribute name  - khaki */
+pre .atv,
+code .atv {
+  color: #ffa0a0;
+} /* attribute value - pink */
+pre .dec,
+code .dec {
+  color: #98fb98;
+} /* decimal         - lightgreen */
+
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #aeaeae;
+}
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L4,
+li.L5,
+li.L6,
+li.L7,
+li.L8 {
+  list-style-type: decimal;
+}
+li.L1,
+li.L3,
+li.L5,
+li.L7,
+li.L9 {
+  background: #444;
+}
