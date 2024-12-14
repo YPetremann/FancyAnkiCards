@@ -1,9 +1,11 @@
 import { replaceHTML } from "./replaceHtml";
-import deck from "/deck.yaml";
+import rawDeck from "/deck.yaml?raw";
 import front from "/front.html?raw";
 import back from "/back.html?raw";
 import style from "/style.css?raw";
+import YAML from "yaml";
 
+const deck = YAML.parse(rawDeck);
 //const deck = await fetch("/deck.json").then((r) => r.json());
 //const front = await fetch("/front.html").then((r) => r.text());
 //const back = await fetch("/back.html").then((r) => r.text());

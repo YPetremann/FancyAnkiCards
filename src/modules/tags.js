@@ -12,4 +12,5 @@ export function _50_tags() {
     )
     .join("");
   tags.classList.add("tagged");
+  console.log("tags installed");
 }

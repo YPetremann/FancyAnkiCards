@@ -6,8 +6,10 @@ export function setup(element, action) {
   observer = new MutationObserver(action);
 }
 export function resume() {
+  console.log("resumed observer");
   observer.observe(observerElement, observerConfig);
 }
 export function pause() {
+  console.log("paused observer");
   observer.disconnect();
 }
