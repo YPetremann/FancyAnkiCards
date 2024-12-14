@@ -1,12 +1,10 @@
 import GeoPattern from "../vendor/geopattern";
 
 export function _50_background() {
-  try {
-    let page = document.querySelector(".card");
+    let page = document.querySelector("#qa").parentElement;
     let breadcrumb = document.querySelector(".breadcrumb");
     var pattern = GeoPattern.generate(breadcrumb.innerHTML);
     page.style = `--image: ${pattern.toDataUrl()}`;
-  } catch (e) {
-    console.error(e);
-  }
+    page.classList.add("--module-background");
+    console.log("background installed");
 }

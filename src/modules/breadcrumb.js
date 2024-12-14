@@ -6,4 +6,5 @@ export function _50_breadcrumb() {
   if (!breadcrumb) return;
   breadcrumb.innerHTML = breadcrumb.innerHTML.split("::").join(" :: ");
   card.style = `--deckcolor:${pastel(hashColor(breadcrumb.innerHTML))};`;
+  console.log("breadcrumb installed");
 }

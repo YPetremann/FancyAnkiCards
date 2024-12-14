@@ -17,4 +17,5 @@ function transform(node) {
 export function _50_markdownize() {
   transform(document.querySelector("header"));
   transform(document.querySelector("footer"));
+  console.log("markdownize done");
 }
